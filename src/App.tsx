@@ -3,7 +3,7 @@ import React from 'react'
 
 const obj = {
 	"error": "0",
-	"title": "An Introduction to C & GUI Programmingn",
+	"title": "An Introduction to C & GUI Programmi erb  efqvqdw ",
 	"subtitle": "",
 	"authors": "Simon Long",
 	"publisher": "Raspberry Pi Press",

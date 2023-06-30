@@ -2,6 +2,18 @@
 @import url('./nullStyle.scss');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+@font-face {
+	font-family: 'DINPro';
+	src: url("../fonts/dinpro.otf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helios';
+	src: url("../fonts/helios.otf");
+	font-style: normal;
+}
+
 body {
 	font-size: 16px;
 	font-family: 'Helios';
@@ -10,6 +22,7 @@ body {
 	font-style: normal;
 	line-height: 32px;
 	background-color: $white;
+	color: $primary;
 }
 
 .wrapper {

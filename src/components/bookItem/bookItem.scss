@@ -1,5 +1,7 @@
 @use '../../styles//variable.scss' as *;
 
+
+
 .books__wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -54,6 +56,7 @@
 	&__title {
 		text-align: justify;
 		min-height: 64px;
+		margin: 0 0 10px 0;
 	}
 
 
