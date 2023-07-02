@@ -1,5 +1,5 @@
 import Title from '../../UI/title/Title'
-import Books from '../../components/Books'
+import Books from '../../components/books/Books'
 import React from 'react'
 
 export const HomePage = () => {
@@ -7,7 +7,10 @@ export const HomePage = () => {
 		<div className='home'>
 			<div className="container">
 				<Title text='New Releases Books' className='home' />
-				<Books />
+				<div className="books">
+					<Books />
+				</div>
+
 			</div>
 		</div>
 	)

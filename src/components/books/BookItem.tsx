@@ -2,8 +2,6 @@ import Rating from '../Rating'
 import React from 'react'
 import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 
-import './bookItem.scss'
-
 type PropsType = {
 	imageSource: string
 	title: string

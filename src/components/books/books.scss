@@ -1,0 +1,128 @@
+@use '../../styles//variable.scss' as *;
+
+.loading-spinner {
+	// height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.books {
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -16px;
+		justify-content: space-between;
+
+		.book {
+			&__inner {
+				flex: 0 0 33%;
+				padding: 0 16px;
+				margin: 0 0 52px 0;
+
+				display: flex;
+				flex-direction: column;
+			}
+
+			&__image {
+				margin: 0 0 21px 0;
+
+				img {
+					display: block;
+					margin: 0 auto;
+					max-width: 216px;
+				}
+			}
+
+			&__image--purple {
+				background-color: $purple;
+			}
+
+			&__image--orange {
+				background-color: $orange;
+			}
+
+			&__image--blue {
+				background-color: $blue;
+			}
+
+			&__image--green {
+				background-color: $green;
+			}
+
+			&__info {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+
+			&__info-text {
+				margin: 0 0 40px 0;
+				flex: 1 1 auto;
+			}
+
+			&__title,
+			&__price {
+				font-size: 24px;
+				font-family: 'Bebas Neue';
+				font-weight: 700;
+			}
+
+			&__title {
+				text-align: justify;
+				min-height: 64px;
+				margin: 0 0 10px 0;
+			}
+
+
+			&__author {
+				color: $secondary;
+				line-height: 24px;
+			}
+
+			&__info-num {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&__rating {
+				padding: 0 0 0 10px;
+
+				svg path {
+					fill: $primary;
+				}
+
+				&.rate0 {
+					svg:nth-child(n) path {
+						fill: $gray;
+					}
+				}
+
+				&.rate1 {
+					svg:nth-child(n+2) path {
+						fill: $gray;
+					}
+				}
+
+				&.rate2 {
+					svg:nth-child(n+3) path {
+						fill: $gray;
+					}
+				}
+
+				&.rate3 {
+					svg:nth-child(n+4) path {
+						fill: $gray;
+					}
+				}
+
+				&.rate4 {
+					svg:nth-child(n+5) path {
+						fill: $gray;
+					}
+				}
+			}
+
+		}
+	}
+}
