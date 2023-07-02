@@ -5,8 +5,8 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.tsx',
 	output: {
-		// filename: 'bundle.js',
-		filename: '[name].[hash].js',
+		filename: 'bundle.js',
+		// filename: '[name].[hash].js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true
 	},
@@ -16,6 +16,8 @@ module.exports = {
 			template: path.join(__dirname, 'public', 'index.html')
 		}),
 	],
+
+	devtool: 'inline-source-map',
 
 	module: {
 		rules: [

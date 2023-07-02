@@ -1,5 +1,8 @@
+import { useDispatch, useSelector } from 'react-redux'
 import BookItem from './components/bookItem/BookItem'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { loadBooks } from './store/books/actions'
+import { AppDispatch, AppState } from './store'
 
 const obj = {
 	"error": "0",
@@ -23,58 +26,28 @@ const obj = {
 }
 
 export const App = () => {
+
+	const dispatch = useDispatch<AppDispatch>()
+	const books = useSelector((state: AppState) => state.books.books)
+	
+	useEffect(() => {
+		dispatch(loadBooks())
+	}, [])
+
 	return (
 		<div className="container">
 			<div className="books__wrapper">
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
-
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
-				<BookItem
-					imageSource={obj.image}
-					title={obj.title}
-					rate={obj.rating}
-					author={obj.authors}
-					price={obj.price}
-					isbn13={obj.isbn13}
-				/>
+				{books.map(item => (
+					< BookItem
+						key={item.isbn13}
+						imageSource={item.image}
+						title={item.title}
+						rate={item.rate}
+						author={item.subtitle}
+						price={item.price}
+						isbn13={item.isbn13}
+					/>
+				))}
 			</div>
 		</div>
 	)

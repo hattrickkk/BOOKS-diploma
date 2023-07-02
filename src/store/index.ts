@@ -1,6 +1,5 @@
 import { Action, combineReducers, configureStore } from "@reduxjs/toolkit";
 import thunkMiddleware, { ThunkAction } from "redux-thunk";
-
 import {
 	persistStore,
 	persistReducer,
@@ -12,10 +11,11 @@ import {
 	REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { booksReducer } from "./books/reducer";
 
 
 const rootReducer = combineReducers({
-
+	books: booksReducer
 })
 
 const persistConfig = {
@@ -40,8 +40,8 @@ export const persistor = persistStore(store)
 export default store;
 
 
-type AppState = ReturnType<typeof store.getState>
-type AppDispatch = typeof store.dispatch
+export type AppState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
 export type AppThunk<ReturnType = void> = ThunkAction<
 	ReturnType,
