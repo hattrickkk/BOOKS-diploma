@@ -1,12 +1,12 @@
 import React from 'react'
 import Books from './components/Books'
+import BooksRoutes from './components/BooksRoutes'
+
 
 export const App = () => {
 	return (
 		<div className="wrapper">
-			<div className="container">
-				<Books />
-			</div>
+			<BooksRoutes />
 		</div>
 	)
 }
