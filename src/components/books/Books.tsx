@@ -22,7 +22,6 @@ const Books = () => {
 			<div className="loading-spinner">
 				<MoonLoader color="#6f4da1" size={100} />
 			</div>
-
 		)
 	}
 

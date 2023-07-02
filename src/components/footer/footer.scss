@@ -1,0 +1,31 @@
+@use '../../styles/variable.scss' as *;
+
+.footer {
+	&__inner {
+		border-top: 1px solid $gray;
+		padding: 33px 0 34px 0;
+
+		p {
+			color: $secondary;
+		}
+
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.footer {
+		&__inner {
+			p {
+				&:not(:last-child) {
+					margin: 0 0 24px 0;
+				}
+
+				text-align: center;
+			}
+
+			flex-direction: column;
+		}
+	}
+}
