@@ -1,0 +1,22 @@
+@use '../../styles/variable.scss' as *;
+
+.input {
+	&:focus {
+		outline: 2px solid $gray;
+	}
+
+	font-family: 'DINPro';
+	outline: 1px solid $gray;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 32px;
+	padding: 14px 20px 10px;
+	width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+	.input {
+		line-height: 24px;
+		padding: 16px 20px 16px 24px;
+	}
+}

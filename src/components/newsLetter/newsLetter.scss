@@ -1,0 +1,91 @@
+@use '../../styles/variable.scss' as *;
+
+.news-letter {
+	margin: 72px 0;
+
+	&__inner {
+		background-color: $purple;
+		padding: 56px 64px;
+	}
+
+	&__text {
+		margin: 0 0 32px 0;
+	}
+
+	&__title {
+		font-size: 40px;
+		font-family: 'Bebas Neue';
+		font-weight: 700;
+		line-height: 60px;
+		margin: 0 0 8px 0;
+		letter-spacing: 0.9px;
+	}
+
+	&__label {
+		color: $secondary;
+		font-size: 18px;
+		font-family: 'DINPro';
+		line-height: 28px;
+	}
+
+	&__subscribe-block {}
+
+	&__subscribe-block-wrapper {
+		display: flex;
+
+		.input {
+			outline: none;
+			border-radius: 2px 0 0 2px;
+		}
+
+		.button {
+			min-width: 150px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.news-letter__inner {
+		padding: 40px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.news-letter__subscribe-block-wrapper {
+		flex-direction: column;
+
+		.input {
+			margin: 0 0 24px 0;
+			border-radius: 2px;
+		}
+
+		.button {
+			min-width: 150px;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.news-letter {
+		margin: 56px 0;
+
+		&__inner {
+			padding: 24px;
+		}
+
+		&__text {
+			margin: 0 0 24px 0;
+		}
+
+		&__title {
+			font-size: 28px;
+			line-height: 38px;
+			margin: 0 0 6px 0;
+		}
+
+		&__label {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+@use '../../styles/variable.scss' as *;
+
+.button {
+
+	&:hover,
+	&:active {
+		background-color: $primary2;
+	}
+
+	transition: 0.2s linear;
+	color: $white;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Bebas Neue';
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	background-color: $primary;
+	padding: 14px 25px;
+}
+
+@media screen and (max-width: 320px) {
+	.button {
+		font-size: 18px;
+		line-height: 24px;
+		padding: 16px 25px;
+	}
+}

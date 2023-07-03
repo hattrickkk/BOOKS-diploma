@@ -1,3 +1,4 @@
+import NewsLetter from '../../components/newsLetter/NewsLetter'
 import Title from '../../UI/title/Title'
 import Books from '../../components/books/Books'
 import React from 'react'
@@ -10,7 +11,7 @@ export const HomePage = () => {
 				<div className="books">
 					<Books />
 				</div>
-
+				<NewsLetter />
 			</div>
 		</div>
 	)

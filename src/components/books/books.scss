@@ -1,13 +1,17 @@
 @use '../../styles//variable.scss' as *;
 
 .loading-spinner {
-	// height: 100%;
+	padding: 70px 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .books {
+	padding: 0 0 72px 0;
+	margin: 0 0 48px 0;
+	border-bottom: 1px solid $gray;
+
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;

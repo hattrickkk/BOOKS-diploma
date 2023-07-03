@@ -27,7 +27,7 @@ const Books = () => {
 
 	return (
 		<div className="books__wrapper">
-			{books2 && books2.map((item, index) => (
+			{books2 && books2.slice(0, 9).map((item, index) => (
 				< BookItem
 					key={index}
 					// key={item.isbn13}
