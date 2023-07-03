@@ -6,6 +6,7 @@ import BookItem from './BookItem'
 import { MoonLoader } from 'react-spinners'
 
 import './books.scss'
+import '../../styles/loading-spinner.scss'
 
 const Books = () => {
 	const dispatch = useDispatch<AppDispatch>()
@@ -26,19 +27,21 @@ const Books = () => {
 	}
 
 	return (
-		<div className="books__wrapper">
-			{books2 && books2.slice(0, 9).map((item, index) => (
-				< BookItem
-					key={index}
-					// key={item.isbn13}
-					imageSource={item.image}
-					title={item.title}
-					rate={item.rate}
-					author={item.subtitle}
-					price={item.price}
-					isbn13={item.isbn13}
-				/>
-			))}
+		<div className="books">
+			<div className="books__wrapper">
+				{books2 && books2.slice(0, 9).map((item, index) => (
+					< BookItem
+						key={index}
+						// key={item.isbn13}
+						imageSource={item.image}
+						title={item.title}
+						rate={item.rate}
+						author={item.subtitle}
+						price={item.price}
+						isbn13={item.isbn13}
+					/>
+				))}
+			</div>
 		</div>
 	)
 }

@@ -4,13 +4,12 @@ import Books from '../../components/books/Books'
 import React from 'react'
 
 export const HomePage = () => {
+
 	return (
 		<div className='home'>
 			<div className="container">
 				<Title text='New Releases Books' className='home' />
-				<div className="books">
-					<Books />
-				</div>
+				<Books />
 				<NewsLetter />
 			</div>
 		</div>
