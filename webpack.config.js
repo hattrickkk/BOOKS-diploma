@@ -17,6 +17,7 @@ module.exports = {
 		}),
 	],
 
+
 	devtool: 'inline-source-map',
 
 	module: {
@@ -47,12 +48,26 @@ module.exports = {
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
-		]
+		],
 	},
 
+
 	devServer: {
-		port: 3000
+		// historyApiFallback: true,
+		port: 3000,
+		proxy: {
+			"/api": {
+				target: "https://api.itbook.store/1.0",
+				pathRewrite: {
+					'^/api/': '',
+				},
+				changeOrigin: true,
+				secure: false,
+			}
+		}
 	},
+
+
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
