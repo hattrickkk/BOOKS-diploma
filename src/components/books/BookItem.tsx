@@ -1,4 +1,4 @@
-import Rating from '../Rating'
+import Rating from '../rating/Rating'
 import React from 'react'
 import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 import { Link } from 'react-router-dom'
@@ -16,7 +16,7 @@ const BookItem = ({ imageSource, title, author, price, rate, isbn13 }: PropsType
 	const backColor = getRandomBackColor()
 	return (
 		<div className='book__inner'>
-			<div className={`book__image book__image--${backColor}`}>
+			<div className={`book__image back-colors--${backColor}`}>
 				<img src={imageSource} alt={title} />
 			</div>
 
@@ -24,6 +24,7 @@ const BookItem = ({ imageSource, title, author, price, rate, isbn13 }: PropsType
 				<div className="book__info-text">
 					<Link
 						to={`/books/${isbn13}`}
+						state={backColor}
 						className="book__title"
 					>{title}
 					</Link>
@@ -32,7 +33,7 @@ const BookItem = ({ imageSource, title, author, price, rate, isbn13 }: PropsType
 
 				<div className="book__info-num">
 					<p className="book__price">{price}</p>
-					<Rating className={rate} />
+					<Rating starsCount={rate} className={'book'} />
 				</div>
 			</div>
 		</div>

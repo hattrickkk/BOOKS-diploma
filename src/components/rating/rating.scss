@@ -1,0 +1,37 @@
+@use '../../styles/variable.scss' as *;
+
+.rating {
+	svg path {
+		fill: $primary;
+	}
+
+	&.rate0 {
+		svg:nth-child(n) path {
+			fill: $gray;
+		}
+	}
+
+	&.rate1 {
+		svg:nth-child(n+2) path {
+			fill: $gray;
+		}
+	}
+
+	&.rate2 {
+		svg:nth-child(n+3) path {
+			fill: $gray;
+		}
+	}
+
+	&.rate3 {
+		svg:nth-child(n+4) path {
+			fill: $gray;
+		}
+	}
+
+	&.rate4 {
+		svg:nth-child(n+5) path {
+			fill: $gray;
+		}
+	}
+}

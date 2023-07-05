@@ -1,4 +1,6 @@
 import React from 'react'
+import './favIcon.scss'
+
 type Props = {
 	clickHandler?: () => {}
 	className?: string
@@ -6,7 +8,7 @@ type Props = {
 }
 
 const FavIcon = ({ className, isLiked, clickHandler }: Props) => {
-	const classNames = [className ? `${className}__favIcon` : `favIcon`]
+	const classNames = [className ? `${className}__favIcon favIcon` : `favIcon`]
 	if (isLiked) {
 		classNames.push('liked')
 	}

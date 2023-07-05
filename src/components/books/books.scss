@@ -1,4 +1,4 @@
-@use '../../styles//variable.scss' as *;
+@use '../../styles/variable.scss' as *;
 
 .books {
 	padding: 0 0 14px 0;
@@ -35,22 +35,6 @@
 					margin: 0 auto;
 					max-width: 216px;
 				}
-			}
-
-			&__image--purple {
-				background-color: $purple;
-			}
-
-			&__image--orange {
-				background-color: $orange;
-			}
-
-			&__image--blue {
-				background-color: $blue;
-			}
-
-			&__image--green {
-				background-color: $green;
 			}
 
 			&__info {
@@ -98,40 +82,6 @@
 
 			&__rating {
 				padding: 0 0 0 10px;
-
-				svg path {
-					fill: $primary;
-				}
-
-				&.rate0 {
-					svg:nth-child(n) path {
-						fill: $gray;
-					}
-				}
-
-				&.rate1 {
-					svg:nth-child(n+2) path {
-						fill: $gray;
-					}
-				}
-
-				&.rate2 {
-					svg:nth-child(n+3) path {
-						fill: $gray;
-					}
-				}
-
-				&.rate3 {
-					svg:nth-child(n+4) path {
-						fill: $gray;
-					}
-				}
-
-				&.rate4 {
-					svg:nth-child(n+5) path {
-						fill: $gray;
-					}
-				}
 			}
 
 		}

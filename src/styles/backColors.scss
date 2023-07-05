@@ -1,0 +1,19 @@
+@use './variable.scss' as *;
+
+.back-colors {
+	&--purple {
+		background-color: $purple;
+	}
+
+	&--orange {
+		background-color: $orange;
+	}
+
+	&--blue {
+		background-color: $blue;
+	}
+
+	&--green {
+		background-color: $green;
+	}
+}

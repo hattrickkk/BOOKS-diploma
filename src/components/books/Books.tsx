@@ -7,6 +7,7 @@ import { MoonLoader } from 'react-spinners'
 
 import './books.scss'
 import '../../styles/loading-spinner.scss'
+import '../../styles/backColors.scss'
 
 const Books = () => {
 	const dispatch = useDispatch<AppDispatch>()

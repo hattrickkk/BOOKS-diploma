@@ -1,0 +1,206 @@
+@use '../../styles/variable.scss' as *;
+
+.book-info {
+	margin: 0 0 72px 0;
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -64px;
+	}
+
+	&__column {
+		padding: 0 64px;
+
+		&:first-child {
+			flex: 0 0 670px;
+		}
+
+		&:last-child {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__image {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		img {
+			min-width: 370px;
+		}
+	}
+
+	&__favIcon {
+		top: 0;
+		right: 0;
+		position: absolute;
+	}
+
+	&__wrapper {
+		padding: 40px 0 0 0;
+		border-top: 1px solid $gray;
+	}
+
+	&__num-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 0 24px 0;
+	}
+
+	&__price {
+		font-size: 40px;
+		font-family: 'Bebas Neue';
+		font-weight: 700;
+		line-height: 60px;
+	}
+
+	&__rating {
+		svg {
+			height: 25px;
+			width: 25px;
+		}
+	}
+
+	&__button {
+		margin: 49px 0 40px;
+		width: 100%;
+	}
+
+	&__description {
+		margin: 0 0 16px 0;
+	}
+
+	.description {
+		&__row {
+			display: flex;
+			justify-content: space-between;
+
+			&:not(:last-child) {
+				margin: 0 0 3px 0;
+			}
+		}
+
+		&__label {
+			color: $secondary;
+			padding: 0 25px 0 0;
+		}
+
+		&__answer {}
+
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.book-info {
+		&__inner {
+			margin: 0 -30px;
+		}
+
+		&__column {
+			padding: 0 30px;
+
+			&:first-child {
+				flex: 0 0 500px;
+			}
+		}
+
+		&__image {
+
+			img {
+				min-width: 320px;
+			}
+		}
+
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.book-info {
+		&__inner {
+			flex-direction: column;
+		}
+
+		&__column {
+
+			&:first-child {
+				flex: 0 0 400px;
+			}
+
+			&:last-child {
+				flex: 1 1 auto;
+			}
+		}
+
+		&__image {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		&__wrapper {
+			margin: 48px auto 0;
+			max-width: 600px;
+		}
+
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.book-info {
+		margin: 0 0 56px 0;
+
+		&__column {
+
+			&:first-child {
+				flex: 0 0 340px;
+			}
+
+		}
+
+		&__image {
+
+			img {
+				max-width: 260px;
+				min-width: 100px;
+			}
+		}
+
+		&__wrapper {
+			margin: 36px auto 0;
+			padding: 35px 0 0 0;
+		}
+
+		&__price {
+			font-size: 35px;
+		}
+
+		&__rating {
+			svg {
+				height: 22px;
+				width: 22px;
+			}
+		}
+
+
+		&__button {
+			margin: 36px 0 32px;
+		}
+
+		.description {
+			&__row {
+				flex-direction: column;
+
+				&:not(:last-child) {
+					margin: 0 0 5px 0;
+				}
+			}
+
+			&__label {
+				padding: 0;
+			}
+		}
+	}
+}

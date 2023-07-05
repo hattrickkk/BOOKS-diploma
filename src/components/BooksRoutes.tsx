@@ -9,6 +9,7 @@ const BooksRoutes = () => {
 		<Routes>
 			<Route path='/' element={<Layout />} >
 				<Route index element={<HomePage />} />
+				{/* <Route index element={<SinglePage />} /> */}
 				<Route path='books/:isbn13' element={<SinglePage />} />
 			</Route>
 		</Routes>

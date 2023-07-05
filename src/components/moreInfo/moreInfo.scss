@@ -1,0 +1,62 @@
+@use '../../styles/variable.scss' as *;
+
+.accordeon {
+
+	&__title {
+		cursor: pointer;
+
+		&:hover{
+			color: $primary2;
+			transition: 0.2s linear;
+		}
+
+		span {
+			position: relative;
+
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				background-color: $primary;
+				height: 2px;
+				width: 9px;
+				right: -25px;
+				top: 50%;
+				border-radius: 2px;
+				transition: 0.2s linear;
+			}
+
+			&::before {
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				transform: translateX(56%) rotate(-45deg);
+			}
+		}
+
+		&.active {
+			span {
+				&::before {
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					transform: translateX(56%) rotate(45deg);
+				}
+			}
+		}
+
+	}
+
+	&__content {
+		&.visible {
+			display: block;
+		}
+
+		padding: 20px 0 0 0;
+		display: none;
+		line-height: 25px;
+	}
+}
