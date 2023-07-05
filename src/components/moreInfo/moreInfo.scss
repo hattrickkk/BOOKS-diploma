@@ -5,7 +5,7 @@
 	&__title {
 		cursor: pointer;
 
-		&:hover{
+		&:hover {
 			color: $primary2;
 			transition: 0.2s linear;
 		}
@@ -58,5 +58,15 @@
 		padding: 20px 0 0 0;
 		display: none;
 		line-height: 25px;
+	}
+
+	&__text {
+		&:not(:last-child) {
+			margin: 0 0 7px 0;
+		}
+
+		span {
+			color: $secondary;
+		}
 	}
 }

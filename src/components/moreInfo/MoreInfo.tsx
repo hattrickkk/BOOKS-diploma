@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './moreInfo.scss'
 
-const MoreInfo = () => {
+const MoreInfo = ({ pages, isbn10, isbn13 }: { [keys: string]: string }) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
@@ -15,9 +15,18 @@ const MoreInfo = () => {
 			<div
 				className={isOpen ? "accordeon__content visible" : "accordeon__content"}
 			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi optio, molestias obcaecati blanditiis id distinctio porro eos?
-				Dicta sunt fugit nobis temporibus debitis dignissimos accusamus recusandae laborum, voluptate tenetur consequatur a eveniet!
-				Distinctio fugit vitae beatae, ab neque animi ut.
+				<p className='accordeon__text'>
+					<span>ISBN10:  </span>
+					{isbn10}
+				</p>
+				<p className='accordeon__text'>
+					<span>ISBN13:  </span>
+					{isbn13}
+				</p>
+				<p className='accordeon__text'>
+					<span>Pages:  </span>
+					{pages}
+				</p>
 			</div>
 		</div >
 	)

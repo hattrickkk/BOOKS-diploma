@@ -7,14 +7,16 @@ import Button from '../../UI/button/Button'
 import './bookInfo.scss'
 import MoreInfo from '../moreInfo/MoreInfo'
 import { useLocation } from 'react-router-dom'
+import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 
 const BookInfo = ({ book }: { book: SingleBookType }) => {
 	const location = useLocation()
+	const backColor = getRandomBackColor()
 	return (
 		<div className="book-info">
 			<div className="book-info__inner">
 				<div className="book-info__column">
-					<div className={`book-info__image back-colors--${location.state}`}>
+					<div className={`book-info__image back-colors--${location.state ? location.state : backColor}`}>
 						<FavIcon className='book-info' isLiked={true} />
 						<img src={book.image} alt={book.title} />
 					</div>
@@ -26,7 +28,11 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 							<Rating className='book-info' starsCount={book.rating} />
 						</div>
 						<BookDescription book={book} />
-						<MoreInfo />
+						<MoreInfo
+							pages={book.pages}
+							isbn10={book.isbn10}
+							isbn13={book.isbn13}
+						/>
 						<Button
 							className='book-info'
 							text='Add to cart'

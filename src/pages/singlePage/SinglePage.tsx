@@ -5,6 +5,8 @@ import { getSingleBook } from '../../services/getSingleBook'
 import Title from '../../UI/title/Title'
 import BookInfo from '../../components/bookInfo/BookInfo'
 import NewsLetter from '../../components/newsLetter/NewsLetter'
+import Tabs from '../../components/tabs/Tabs'
+import Socials from '../../components/socials/Socials'
 
 const SinglePage = () => {
 	const { isbn13 } = useParams()
@@ -23,7 +25,12 @@ const SinglePage = () => {
 			<div className="container">
 				<Title text={book.title} className='single-page' />
 				<BookInfo book={book} />
-
+				<Tabs
+					className='single-page'
+					descr={book.desc}
+					authors={book.authors}
+				/>
+				<Socials className='single-page' />
 				<NewsLetter />
 			</div>
 		</div>
