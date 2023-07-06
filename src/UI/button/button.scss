@@ -7,6 +7,31 @@
 		background-color: $primary2;
 	}
 
+	&.secondary {
+
+		&:hover,
+		&:active {
+			background-color: $primary2;
+			border: 2px solid $primary2;
+			color: $white;
+		}
+
+		background-color: transparent;
+		border: 2px solid $primary;
+		color: $primary;
+	}
+
+	&.secondary2 {
+
+		&:hover,
+		&:active {
+			text-decoration-line: underline;
+		}
+
+		background-color: transparent;
+		color: $primary;
+	}
+
 	transition: 0.2s linear;
 	color: $white;
 	text-align: center;

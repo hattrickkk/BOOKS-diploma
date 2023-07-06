@@ -6,13 +6,19 @@ type PropsType = {
 	type?: 'submit' | 'button' | 'reset'
 	clickHandler: () => void
 	className?: string
+	category?: 'secondary' | 'primary' | 'secondary2'
 }
-const Button = ({ text, type, clickHandler, className }: PropsType) => {
+const Button = ({ text, type, clickHandler, className, category }: PropsType) => {
+
+	const classNames = [className ? `button ${className}__button` : 'button']
+	if (category) {
+		classNames.push(category)
+	}
 	return (
 		<button
 			type={type ? type : 'button'}
 			onClick={clickHandler}
-			className={className ? `button ${className}__button` : 'button'}
+			className={classNames.join(' ')}
 		>{text}</button>
 	)
 }

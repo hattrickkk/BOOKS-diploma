@@ -1,0 +1,14 @@
+.icon {
+	display: flex;
+
+	&__item {
+		&:not(:last-child) {
+			margin: 0 18px 0 0;
+		}
+
+
+		padding: 14px;
+		display: flex;
+		align-items: center;
+	}
+}
