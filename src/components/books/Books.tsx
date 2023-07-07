@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '../../store/index'
 import { loadBooks } from '../../store/books/actions'
-import BookItem from './BookItem'
+import BookItem from '../bookItem/BookItem'
 import { MoonLoader } from 'react-spinners'
 
 import './books.scss'

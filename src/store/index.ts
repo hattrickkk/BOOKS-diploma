@@ -12,16 +12,18 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { booksReducer } from "./books/reducer";
+import { favBooksReducer } from "./favBooks/reducer";
 
 
 const rootReducer = combineReducers({
-	books: booksReducer
+	books: booksReducer,
+	favBooks: favBooksReducer
 })
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: [],
+	whitelist: ['favBooks'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

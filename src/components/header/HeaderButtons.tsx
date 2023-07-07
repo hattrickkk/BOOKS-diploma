@@ -5,7 +5,7 @@ const HeaderButtons = () => {
 	return (
 		<div className="header__buttons">
 
-			{false &&
+			{true &&
 				<Button
 					category={'secondary'}
 					text='Log Out'
@@ -14,7 +14,7 @@ const HeaderButtons = () => {
 				/>
 			}
 
-			{true &&
+			{false &&
 				<div className="header__buttons-not-auth">
 					<Button
 						category={'secondary2'}

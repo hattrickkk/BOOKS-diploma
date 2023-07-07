@@ -8,7 +8,7 @@ type Props = {
 const HeaderInfo = ({ cb }: Props) => {
 	return (
 		<div className="header__info">
-			{false && <HeaderIcons />}
+			{true && <HeaderIcons />}
 			<HeaderButtons />
 
 			<div

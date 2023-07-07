@@ -3,6 +3,8 @@ import React from 'react'
 import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 import { Link } from 'react-router-dom'
 
+import './bookItem.scss'
+
 type PropsType = {
 	imageSource: string
 	title: string

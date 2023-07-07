@@ -29,6 +29,7 @@ export type SingleBookType = {
 	price: string,
 	image: string
 	url: string
+	isfav: boolean
 	pdf?: {
 		[keys: string]: string
 	}

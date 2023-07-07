@@ -5,8 +5,8 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.tsx',
 	output: {
-		filename: 'bundle.js',
-		// filename: '[name].[hash].js',
+		// filename: 'bundle.js',
+		filename: '[name].[hash].js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true
 	},
@@ -53,18 +53,18 @@ module.exports = {
 
 
 	devServer: {
-		// historyApiFallback: true,
+		historyApiFallback: true,
 		port: 3000,
-		proxy: {
-			"/api": {
-				target: "https://api.itbook.store/1.0",
-				pathRewrite: {
-					'^/api/': '',
-				},
-				changeOrigin: true,
-				secure: false,
-			}
-		}
+		// proxy: {
+		// 	"/api": {
+		// 		target: "https://api.itbook.store/1.0",
+		// 		pathRewrite: {
+		// 			'^/api/': '',
+		// 		},
+		// 		changeOrigin: true,
+		// 		secure: false,
+		// 	}
+		// }
 	},
 
 

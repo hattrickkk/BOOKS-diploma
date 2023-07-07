@@ -1,6 +1,9 @@
 @use '../../styles/variable.scss' as *;
 
 .rating {
+	display: flex;
+	align-items: center;
+
 	svg path {
 		fill: $primary;
 	}

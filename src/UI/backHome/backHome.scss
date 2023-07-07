@@ -1,0 +1,10 @@
+.back-home {
+	margin: 0 0 32px 0;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+	.back-home {
+		margin: 0 0 24px 0;
+	}
+}
