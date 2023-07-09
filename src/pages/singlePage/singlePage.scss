@@ -1,0 +1,9 @@
+.single-page {
+	padding: 167px 72px;
+}
+
+@media screen and (max-width: 320px) {
+	.single-page {
+			padding: 150px 56px;
+		}
+}

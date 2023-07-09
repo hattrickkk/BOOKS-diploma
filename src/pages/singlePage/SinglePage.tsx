@@ -7,6 +7,8 @@ import BookInfo from '../../components/bookInfo/BookInfo'
 import NewsLetter from '../../components/newsLetter/NewsLetter'
 import Tabs from '../../components/tabs/Tabs'
 import Socials from '../../components/socials/Socials'
+import BackHome from '../../UI/backHome/BackHome'
+import './singlePage.scss'
 
 const SinglePage = () => {
 	const { isbn13 } = useParams()
@@ -23,6 +25,7 @@ const SinglePage = () => {
 	return (
 		<div className='single-page'>
 			<div className="container">
+				<BackHome />
 				<Title text={book.title} className='single-page' />
 				<BookInfo book={book} />
 				<Tabs

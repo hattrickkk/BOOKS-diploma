@@ -23,6 +23,7 @@ const FavPosts = () => {
 						author={item.subtitle}
 						price={item.price}
 						isbn13={item.isbn13}
+						isFav={true}
 					/>
 					<HeartIcon
 						key={i}

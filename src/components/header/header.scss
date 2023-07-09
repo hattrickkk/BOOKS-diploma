@@ -25,6 +25,8 @@
 
 	&__buttons {
 		padding: 0 0 0 30px;
+		display: flex;
+		align-items: center;
 
 		.button {
 			font-size: 18px;

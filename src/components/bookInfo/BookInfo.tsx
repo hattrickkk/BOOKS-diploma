@@ -25,8 +25,6 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 		!likedBook
 			? dispatch(setAsFavBookAction(book))
 			: dispatch(removeFromFavBooksAction(book.isbn13))
-
-		console.log(favBooks)
 	}
 
 	return (

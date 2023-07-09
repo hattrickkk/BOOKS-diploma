@@ -1,7 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .fav-books-page {
-	padding: 176px 0;
+	padding: 176px 0 72px 0;
 
 	.fav-books {
 		&__item {
@@ -38,12 +38,122 @@
 
 		&__info {
 			padding: 0 0 0 32px;
-			flex: 0 0 700px;
+			flex: 0 0 500px;
 			height: auto;
+		}
+
+		&__author {
+			max-height: 24px;
+			overflow: hidden;
 		}
 
 		&__info-num {
 			max-width: 350px;
+		}
+
+		&__favIcon {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.fav-books-page {
+
+		.fav-books {
+			&__item {
+				position: relative;
+			}
+
+			&__heartIcon {
+				position: absolute;
+				right: 0px;
+				top: 16px;
+			}
+		}
+
+		.book {
+
+			&__image {
+				padding: 0 37px;
+
+				img {
+					max-width: 130px;
+				}
+			}
+
+			&__title {
+				margin: 0;
+			}
+
+			&__info {
+				flex: 0 0 420px;
+			}
+
+			&__info-text {
+				margin: 0 0 25px;
+			}
+
+		}
+	}
+}
+
+@media screen and (max-width: 616px) {
+	.fav-books-page {
+		padding: 160px 0 56px 0;
+
+		.fav-books {
+			&__item {
+				flex-direction: column;
+				margin: 0 auto 36px auto;
+				padding: 0 0 33px 0;
+			}
+
+			&__heartIcon {
+				display: none;
+			}
+		}
+
+		.book {
+			&__inner {
+				flex-direction: column;
+				max-width: none;
+			}
+
+			&__image {
+				padding: 0;
+				margin: 0 0 20px 0;
+				width: 100%;
+
+				img {
+					max-width: 180px;
+				}
+			}
+
+
+			&__info {
+				flex: 1 1 auto;
+				width: 100%;
+				padding: 0;
+			}
+
+			&__title,
+			&__author {
+				max-height: none;
+			}
+
+			&__info-num {
+				max-width: none;
+			}
+
+			&__favIcon {
+				display: block;
+				top: 0;
+				right: 0;
+				position: absolute;
+				display: flex;
+				align-items: center;
+			}
 		}
 	}
 }
