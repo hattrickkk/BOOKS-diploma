@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 const HeaderIcons = () => {
 	const favposts = useSelector((state: AppState) => state.favBooks.list)
+	const cart = useSelector((state: AppState) => state.cart.list)
 	const navigate = useNavigate()
 	return (
 		<div className="header__icons icon">
@@ -35,11 +36,28 @@ const HeaderIcons = () => {
 				}
 
 			</div>
-			<div className="icon__item">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-					<path d="M5.1 3L3 19.3929C3 19.8191 3.15979 20.2279 3.44422 20.5293C3.72865 20.8307 4.11442 21 4.51667 21H19.4833C19.8856 21 20.2713 20.8307 20.5558 20.5293C20.8402 20.2279 21 19.8191 21 19.3929L18.9 3H5.1Z" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-					<path d="M15 9C15 9.53043 14.6839 10.0391 14.1213 10.4142C13.5587 10.7893 12.7956 11 12 11C11.2044 11 10.4413 10.7893 9.87868 10.4142C9.31607 10.0391 9 9.53043 9 9" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-				</svg>
+			<div
+				className="icon__item"
+				onClick={() => { navigate('/books/cart') }}
+			>
+				{cart.length
+					? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<g clip-path="url(#clip0_10284_2968)">
+							<path d="M5.1 3L3 19.3929C3 19.8191 3.15979 20.2279 3.44422 20.5293C3.72865 20.8307 4.11442 21 4.51667 21H19.4833C19.8856 21 20.2713 20.8307 20.5558 20.5293C20.8402 20.2279 21 19.8191 21 19.3929L18.9 3H5.1Z" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M15 9C15 9.53043 14.6839 10.0391 14.1213 10.4142C13.5587 10.7893 12.7956 11 12 11C11.2044 11 10.4413 10.7893 9.87868 10.4142C9.31607 10.0391 9 9.53043 9 9" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+							<circle cx="20" cy="4" r="5" fill="#FC857F" stroke="white" strokeWidth="2" />
+						</g>
+						<defs>
+							<clipPath id="clip0_10284_2968">
+								<rect width="24" height="24" fill="white" />
+							</clipPath>
+						</defs>
+					</svg>
+					: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path d="M5.1 3L3 19.3929C3 19.8191 3.15979 20.2279 3.44422 20.5293C3.72865 20.8307 4.11442 21 4.51667 21H19.4833C19.8856 21 20.2713 20.8307 20.5558 20.5293C20.8402 20.2279 21 19.8191 21 19.3929L18.9 3H5.1Z" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+						<path d="M15 9C15 9.53043 14.6839 10.0391 14.1213 10.4142C13.5587 10.7893 12.7956 11 12 11C11.2044 11 10.4413 10.7893 9.87868 10.4142C9.31607 10.0391 9 9.53043 9 9" stroke="#313037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+					</svg>
+				}
 			</div>
 			<div className="icon__item">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

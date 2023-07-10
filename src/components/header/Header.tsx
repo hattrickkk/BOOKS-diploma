@@ -10,7 +10,6 @@ const Header = () => {
 
 	const burgerBtnClick = () => {
 		setIsOpen(prev => !prev)
-		console.log(isOpen)
 	}
 
 	return (
@@ -20,7 +19,6 @@ const Header = () => {
 					<Logo className='header' />
 					<p>search</p>
 					<HeaderInfo cb={burgerBtnClick} />
-
 
 
 					<div

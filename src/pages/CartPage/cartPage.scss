@@ -1,0 +1,181 @@
+@use '../../styles/variable.scss' as *;
+
+.cart-page {
+	padding: 176px 0 72px 0;
+
+	.cart-item {
+		margin: 0 0 48px 0;
+		padding: 0 0 48px 0;
+		border-bottom: 1px solid $gray;
+
+		.book {
+			&__inner {
+				margin: 0;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			&__block {
+				display: flex;
+				align-items: center;
+				width: 100%;
+			}
+
+			&__image {
+				margin: 0;
+
+				img {
+					max-width: 163px;
+				}
+			}
+
+			&__info {
+				padding: 0 0 0 32px;
+				flex: 1 1 auto;
+			}
+
+
+			&__info-text {
+				margin: 0 0 26px 0;
+			}
+
+			&__info-counter {
+				p {
+					padding: 0 40px;
+					font-family: 'Bebas Neue';
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 32px;
+				}
+
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+			}
+
+			&__price-block {
+				padding: 0 100px;
+			}
+
+			&__price {
+				font-size: 40px;
+				line-height: 60px;
+			}
+
+			&__delIcon.delIcon--dark {
+				display: none;
+				position: absolute;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 840px) {
+	.cart-page {
+		.cart-item {
+			.book {
+				&__inner {
+					position: relative;
+				}
+
+				&__info {
+					max-width: 400px;
+				}
+
+				&__price-block,
+				&__delIcon {
+					position: absolute;
+					padding: 0;
+					right: 0;
+				}
+
+				&__price-block {
+					bottom: -20px;
+				}
+
+				&__delIcon {
+					top: 0;
+				}
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 670px) {
+	.cart-page {
+		.cart-item {
+			.book {
+
+				&__info {
+					max-width: 300px;
+				}
+
+				&__price-block {
+					bottom: 0px;
+				}
+
+				&__price {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 580px) {
+	.cart-page {
+		.cart-item {
+			margin: 0 0 36px 0;
+			padding: 0 0 36px 0;
+
+			.book {
+				&__inner {
+					justify-content: center;
+					padding: 0;
+					max-width: none;
+				}
+
+				&__block {
+					flex-direction: column;
+					width: 100%;
+				}
+
+				&__info {
+					width: 100%;
+					max-width: none;
+					padding: 0;
+				}
+
+				&__image {
+					width: 100%;
+					margin: 0 0 20px 0;
+				}
+
+				&__info-counter p {
+					padding: 0 22px;
+				}
+
+				&__price {
+					font-size: 28px;
+				}
+
+				&__delIcon {
+					&.delIcon--dark {
+						display: flex;
+						align-items: center;
+						padding: 4px;
+					}
+
+					display: none;
+				}
+
+			}
+		}
+	}
+
+}

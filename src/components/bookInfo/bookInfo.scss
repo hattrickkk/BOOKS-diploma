@@ -89,7 +89,10 @@
 			padding: 0 25px 0 0;
 		}
 
-		&__answer {}
+		&__answer {
+			text-align: right;
+			padding: 0 0 0 5px;
+		}
 
 	}
 }

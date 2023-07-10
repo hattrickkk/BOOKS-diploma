@@ -11,6 +11,7 @@ import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from 'store'
 import { removeFromFavBooksAction, setAsFavBookAction } from '../../store/favBooks/actions'
+import { addOnePositionToCart, addToCartAction } from '../../store/cart/actions'
 
 const BookInfo = ({ book }: { book: SingleBookType }) => {
 	const dispatch = useDispatch()
@@ -19,12 +20,18 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 
 	const favBooks = useSelector((state: AppState) => state.favBooks.list)
 	const likedBook = favBooks.find(item => item.isbn13 === book.isbn13)
-
-
 	const favBookClickHandler = () => {
 		!likedBook
 			? dispatch(setAsFavBookAction(book))
 			: dispatch(removeFromFavBooksAction(book.isbn13))
+	}
+
+	const cart = useSelector((state: AppState) => state.cart.list)
+	const bookInCart = cart.find(item => item.isbn13 === book.isbn13)
+	const addToCartClickHandler = () => {
+		bookInCart
+			? dispatch(addOnePositionToCart(book.isbn13))
+			: dispatch(addToCartAction(book))
 	}
 
 	return (
@@ -55,7 +62,7 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 						<Button
 							className='book-info'
 							text='Add to cart'
-							clickHandler={() => { }}
+							clickHandler={addToCartClickHandler}
 						/>
 						<p>Preview Book</p>
 					</div>

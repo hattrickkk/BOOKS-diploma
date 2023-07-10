@@ -5,7 +5,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from '../../store/index'
 
-const FavPosts = () => {
+const favBooks = () => {
 	const favposts = useSelector((state: AppState) => state.favBooks.list)
 	const dispatch = useDispatch()
 	return (
@@ -36,4 +36,4 @@ const FavPosts = () => {
 	)
 }
 
-export default FavPosts
+export default favBooks

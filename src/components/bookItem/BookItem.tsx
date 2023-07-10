@@ -19,7 +19,6 @@ type PropsType = {
 	isFav?: boolean
 }
 
-
 const BookItem = ({ imageSource, title, author, price, rate, isbn13, isFav }: PropsType) => {
 	const backColor = getRandomBackColor()
 	const dispatch = useDispatch()

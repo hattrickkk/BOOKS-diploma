@@ -2,7 +2,7 @@ import React from 'react'
 import './favIcon.scss'
 
 type Props = {
-	clickHandler?: () => void
+	clickHandler: () => void
 	className?: string
 	isLiked: boolean
 }

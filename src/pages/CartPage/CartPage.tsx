@@ -1,23 +1,23 @@
 import React from 'react'
-import FavPosts from '../../components/favBooks/favBooks'
-import './favoriteBooksPage.scss'
 import Title from '../../UI/title/Title'
 import BackHome from '../../UI/backHome/BackHome'
 import { useSelector } from 'react-redux'
 import { AppState } from 'store'
 import NotFound from '../../UI/notFoundImg/NotFound'
+import Cart from '../../components/cart/Cart'
+import './cartPage.scss'
 
-const FavBooksPage = () => {
-	const favBooks = useSelector((state: AppState) => state.favBooks.list)
+const CartPage = () => {
+	// const favBooks = useSelector((state: AppState) => state.favBooks.list)
 	return (
-		<div className="fav-books-page">
+		<div className="cart-page">
 			<div className="container">
 				<BackHome />
-				<Title className="fav-books-page" text='Favorites' />
-				<FavPosts />
-				{
+				<Title className="cart-page" text='Cart' />
+				<Cart />
+				{/* {
 					(favBooks.length === 0) && <NotFound />
-				}
+				} */}
 
 			</div>
 
@@ -25,4 +25,4 @@ const FavBooksPage = () => {
 	)
 }
 
-export default FavBooksPage
+export default CartPage

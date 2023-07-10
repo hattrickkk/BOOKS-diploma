@@ -1,0 +1,15 @@
+@use '../../../styles/variable.scss' as *;
+
+.delIcon {
+	&--dark {
+		background-color: $primary;
+
+		svg path {
+			fill: $white;
+		}
+	}
+
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
