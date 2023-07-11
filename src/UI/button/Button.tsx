@@ -4,7 +4,7 @@ import './button.scss'
 type PropsType = {
 	text: string
 	type?: 'submit' | 'button' | 'reset'
-	clickHandler: () => void
+	clickHandler?: () => void
 	className?: string
 	category?: 'secondary' | 'primary' | 'secondary2'
 }

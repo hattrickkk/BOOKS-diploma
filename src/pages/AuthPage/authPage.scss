@@ -1,0 +1,34 @@
+@use '../../styles/variable.scss' as *;
+
+.auth-page {
+	padding: 170px 0 50px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.auth {
+		&__tabs {
+			padding: 26px 32px 40px;
+			border: 1px solid $gray;
+		}
+
+		.tabs {
+			&__title {
+				font-family: 'Bebas Neue';
+				font-size: 24px;
+				font-weight: 700;
+				letter-spacing: 1.2px;
+				padding: 0 90px 20px;
+			}
+		}
+
+		.button {
+			margin: 45px 0 0 0;
+			width: 100%;
+		}
+
+		.error-label:last-child {
+			margin: -30px 0 0 0;
+		}
+	}
+}

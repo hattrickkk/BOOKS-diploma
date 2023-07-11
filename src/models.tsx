@@ -35,3 +35,29 @@ export type SingleBookType = {
 		[keys: string]: string
 	}
 }
+export type UserType = {
+	id: string
+	username: string
+	email: string
+}
+
+export type ActivationType = {
+	uid: string
+	token: string
+}
+
+export type TokensType = {
+	access: string
+	refresh: string
+}
+export type ErrorMessageType = {
+	[key: string]: string[] | string
+}
+
+export type FormType = {
+	username?: string
+	email: string
+	password: string
+	confirmPassword?: string
+}
+export type FormErrorsType = Partial<Record<keyof FormType, string>>  /* & {g: string} */

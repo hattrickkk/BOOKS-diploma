@@ -1,0 +1,66 @@
+@use '../../styles/variable.scss' as *;
+
+.reg-confirmation-page {
+	padding: 170px 0 80px 0;
+
+	.reg-confirmation {
+		margin: 0 auto;
+		padding: 25px;
+		border: 1px solid $gray;
+		max-width: 500px;
+
+		&__button {
+			width: 100%;
+			margin: 45px 0 0 0;
+		}
+
+		&__activation-block {
+			display: flex;
+			align-items: flex-end;
+			margin: 30px 0 0 0;
+
+			.field {
+				flex: 1 1 auto;
+
+				.input {
+					border-radius: 2px 0 0 2px;
+				}
+			}
+
+			.button {
+				padding: 13px 15px 12px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.reg-confirmation-page {
+		padding: 140px 0 50px 0;
+
+		.reg-confirmation {
+
+			&__button {
+				margin: 30px 0 0 0;
+			}
+
+			&__activation-block {
+				flex-direction: column;
+
+				.field {
+					margin: 0 0 20px 0;
+					width: 100%;
+
+					.input {
+						border-radius: 2px 0 0 2px;
+					}
+				}
+
+				.button {
+					padding: 16px 25px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

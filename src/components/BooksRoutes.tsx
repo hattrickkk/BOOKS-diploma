@@ -5,16 +5,25 @@ import { HomePage } from '../pages/homePage/HomePage'
 import SinglePage from '../pages/singlePage/SinglePage'
 import FavBooksPage from '../pages/FavBooksPage/FavBooksPage'
 import CartPage from '../pages/CartPage/CartPage'
+import AuthPage from '../pages/AuthPage/AuthPage'
+import RegConfirmationPage from '../pages/registarationConfirmationPage/RegConfirmationPage'
+import ActivationPage from '../pages/activationPage/ActivationPage'
+import SuccessPage from '../pages/successPage/SuccessPage'
 
 const BooksRoutes = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Layout />} >
 				<Route index element={<HomePage />} />
-				{/* <Route index element={<CartPage />} /> */}
+				{/* <Route index element={<AuthPage />} /> */}
 				<Route path='books/:isbn13' element={<SinglePage />} />
 				<Route path='books/favorites' element={<FavBooksPage />} />
 				<Route path='books/cart' element={<CartPage />} />
+
+				<Route path='/auth' element={<AuthPage />} />
+				<Route path='/auth/registration-confirmation' element={<RegConfirmationPage />} />
+				<Route path='/auth/activate/:uid/:token' element={<ActivationPage />} />
+				<Route path='/auth/success' element={<SuccessPage />} />
 			</Route>
 		</Routes>
 	)

@@ -14,18 +14,24 @@ import storage from 'redux-persist/lib/storage';
 import { booksReducer } from "./books/reducer";
 import { favBooksReducer } from "./favBooks/reducer";
 import { cartReducer } from "./cart/reducer";
+import { regReducer } from "./registration/reducer";
+import { activationReducer } from "./activation/reducer";
+import { authReducer } from "./auth/reducer";
 
 
 const rootReducer = combineReducers({
 	books: booksReducer,
 	favBooks: favBooksReducer,
-	cart: cartReducer
+	cart: cartReducer,
+	registration: regReducer,
+	activation: activationReducer,
+	auth: authReducer
 })
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['favBooks', 'cart'],
+	whitelist: ['favBooks', 'cart', 'auth'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
