@@ -32,6 +32,12 @@
 		color: $primary;
 	}
 
+	&.disabled {
+		pointer-events: none;
+		background-color: $gray;
+		color: $primary;
+	}
+
 	transition: 0.2s linear;
 	color: $white;
 	text-align: center;

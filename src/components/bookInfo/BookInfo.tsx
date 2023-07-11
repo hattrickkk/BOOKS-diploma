@@ -6,17 +6,20 @@ import BookDescription from './BookDescription'
 import Button from '../../UI/button/Button'
 import './bookInfo.scss'
 import MoreInfo from '../moreInfo/MoreInfo'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { getRandomBackColor } from '../../helpers/getRandomBackcolor'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from 'store'
 import { removeFromFavBooksAction, setAsFavBookAction } from '../../store/favBooks/actions'
 import { addOnePositionToCart, addToCartAction } from '../../store/cart/actions'
+import { authSelector } from '../../store/auth/selectors'
 
 const BookInfo = ({ book }: { book: SingleBookType }) => {
 	const dispatch = useDispatch()
 	const location = useLocation()
+	const navigate = useNavigate()
 	const backColor = getRandomBackColor()
+	const isAuth = useSelector(authSelector).isAuth
 
 	const favBooks = useSelector((state: AppState) => state.favBooks.list)
 	const likedBook = favBooks.find(item => item.isbn13 === book.isbn13)
@@ -29,9 +32,14 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 	const cart = useSelector((state: AppState) => state.cart.list)
 	const bookInCart = cart.find(item => item.isbn13 === book.isbn13)
 	const addToCartClickHandler = () => {
-		bookInCart
-			? dispatch(addOnePositionToCart(book.isbn13))
-			: dispatch(addToCartAction(book))
+		if (isAuth) {
+			bookInCart
+				? dispatch(addOnePositionToCart(book.isbn13))
+				: dispatch(addToCartAction(book))
+		}
+		else {
+			navigate('/auth/')
+		}
 	}
 
 	return (
@@ -39,11 +47,13 @@ const BookInfo = ({ book }: { book: SingleBookType }) => {
 			<div className="book-info__inner">
 				<div className="book-info__column">
 					<div className={`book-info__image back-colors--${location.state ? location.state : backColor}`}>
-						<FavIcon
-							clickHandler={favBookClickHandler}
-							className='book-info'
-							isLiked={likedBook ? true : false}
-						/>
+						{isAuth &&
+							<FavIcon
+								clickHandler={favBookClickHandler}
+								className='book-info'
+								isLiked={likedBook ? true : false}
+							/>
+						}
 						<img src={book.image} alt={book.title} />
 					</div>
 				</div>

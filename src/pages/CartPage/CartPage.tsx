@@ -8,16 +8,16 @@ import Cart from '../../components/cart/Cart'
 import './cartPage.scss'
 
 const CartPage = () => {
-	// const favBooks = useSelector((state: AppState) => state.favBooks.list)
+	const cart = useSelector((state: AppState) => state.cart.list)
 	return (
 		<div className="cart-page">
 			<div className="container">
 				<BackHome />
 				<Title className="cart-page" text='Cart' />
 				<Cart />
-				{/* {
-					(favBooks.length === 0) && <NotFound />
-				} */}
+				{
+					(cart.length === 0) && <NotFound />
+				}
 
 			</div>
 

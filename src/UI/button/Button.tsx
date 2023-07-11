@@ -7,15 +7,21 @@ type PropsType = {
 	clickHandler?: () => void
 	className?: string
 	category?: 'secondary' | 'primary' | 'secondary2'
+	isDisabled?: boolean
 }
-const Button = ({ text, type, clickHandler, className, category }: PropsType) => {
+const Button = ({ text, type, clickHandler, className, category, isDisabled }: PropsType) => {
 
 	const classNames = [className ? `button ${className}__button` : 'button']
 	if (category) {
 		classNames.push(category)
 	}
+	if (isDisabled) {
+		classNames.push('disabled')
+	}
+
 	return (
 		<button
+			disabled={isDisabled ? true : false}
 			type={type ? type : 'button'}
 			onClick={clickHandler}
 			className={classNames.join(' ')}
