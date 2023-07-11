@@ -2,6 +2,7 @@
 
 .cart-page {
 	padding: 176px 0 72px 0;
+	
 
 	.cart-item {
 		margin: 0 0 48px 0;
@@ -52,6 +53,12 @@
 				cursor: pointer;
 				display: flex;
 				align-items: center;
+
+				.minus, 
+				.plus{
+					display: flex;
+					align-items: center;
+				}
 			}
 
 			&__price-block {

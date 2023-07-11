@@ -1,0 +1,38 @@
+@use '../../styles/variable.scss' as *;
+
+.calc {
+	max-width: 265px;
+	margin-left: auto;
+
+	&__inner {}
+
+	&__row {
+		&:first-child {
+			margin: 0 0 17px 0;
+		}
+
+		&:nth-child(2) {
+			margin: 0 0 24px 0;
+		}
+
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__text {
+		color: $secondary;
+	}
+
+	&__num {
+		text-align: right;
+	}
+
+	&__text--bold,
+	&__num--bold {
+		font-family: 'Bebas Neue';
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 60px;
+		color: $primary;
+	}
+}

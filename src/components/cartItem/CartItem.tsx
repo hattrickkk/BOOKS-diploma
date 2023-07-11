@@ -11,11 +11,11 @@ type PropsType = {
 	imageSource: string
 	title: string
 	author: string
-	price: string
+	totalPrice: string
 	isbn13: string
 	count?: number
 }
-const CartItem = ({ imageSource, title, author, price, count, isbn13 }: PropsType) => {
+const CartItem = ({ imageSource, title, author, totalPrice, count, isbn13 }: PropsType) => {
 	const backColor = getRandomBackColor()
 	const dispatch = useDispatch()
 
@@ -57,7 +57,7 @@ const CartItem = ({ imageSource, title, author, price, count, isbn13 }: PropsTyp
 					</div>
 
 					<div className="book__price-block">
-						<p className="book__price">{price}</p>
+						<p className="book__price">{`$${totalPrice}`}</p>
 					</div>
 					<DeleteIcon
 						className='book'

@@ -15,7 +15,7 @@ const BooksRoutes = () => {
 		<Routes>
 			<Route path='/' element={<Layout />} >
 				<Route index element={<HomePage />} />
-				{/* <Route index element={<AuthPage />} /> */}
+				{/* <Route index element={<CartPage />} /> */}
 				<Route path='books/:isbn13' element={<SinglePage />} />
 				<Route path='books/favorites' element={<FavBooksPage />} />
 				<Route path='books/cart' element={<CartPage />} />
