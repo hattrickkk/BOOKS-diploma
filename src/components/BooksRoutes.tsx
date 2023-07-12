@@ -20,10 +20,10 @@ const BooksRoutes = () => {
 				<Route path='books/favorites' element={<FavBooksPage />} />
 				<Route path='books/cart' element={<CartPage />} />
 
-				<Route path='/auth' element={<AuthPage />} />
-				<Route path='/auth/registration-confirmation' element={<RegConfirmationPage />} />
-				<Route path='/auth/activate/:uid/:token' element={<ActivationPage />} />
-				<Route path='/auth/success' element={<SuccessPage />} />
+				<Route path='auth' element={<AuthPage />} />
+				<Route path='auth/registration-confirmation' element={<RegConfirmationPage />} />
+				<Route path='auth/activate/:uid/:token' element={<ActivationPage />} />
+				<Route path='auth/success' element={<SuccessPage />} />
 			</Route>
 		</Routes>
 	)

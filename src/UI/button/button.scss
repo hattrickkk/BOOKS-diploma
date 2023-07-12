@@ -33,9 +33,9 @@
 	}
 
 	&.disabled {
-		pointer-events: none;
-		background-color: $gray;
-		color: $primary;
+		// pointer-events: none;
+		// // background-color: $gray;
+		// color: $primary;
 	}
 
 	transition: 0.2s linear;

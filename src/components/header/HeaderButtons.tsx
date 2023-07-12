@@ -10,13 +10,18 @@ const HeaderButtons = () => {
 	const dispatch = useDispatch()
 	const location = useLocation()
 	const isAuth = useSelector(authSelector).isAuth
+
+	const logOutClick = () => {
+		dispatch(clearAuthStoreAction())
+		navigate('/')
+	}
 	return (
 		<div className="header__buttons">
 			{isAuth &&
 				<Button
 					category={'secondary'}
 					text='Log Out'
-					clickHandler={() => { dispatch(clearAuthStoreAction()) }}
+					clickHandler={logOutClick}
 					className='header'
 				/>
 			}
