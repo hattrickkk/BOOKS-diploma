@@ -5,7 +5,7 @@ import React from 'react'
 import './homePage.scss'
 
 export const HomePage = () => {
-
+	
 	return (
 		<div className='home'>
 			<div className="container">
