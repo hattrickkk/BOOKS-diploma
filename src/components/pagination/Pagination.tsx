@@ -9,9 +9,10 @@ type Props = {
 	itemPerPage: number
 	currentPage: number
 	className: string
+	endoint?: string
 }
 
-const Pagination = ({ total, itemPerPage, currentPage, className }: Props) => {
+const Pagination = ({ total, itemPerPage, currentPage, className, endoint }: Props) => {
 	const [pages, setPages] = useState<ReturnType<typeof getPages>>([])
 	const { pageNumber } = useParams()
 
@@ -29,7 +30,19 @@ const Pagination = ({ total, itemPerPage, currentPage, className }: Props) => {
 					pages.map((item, index) => (
 						item === '..'
 							? (<span key={index}>{item}</span>)
-							: (<NavLink key={index} to={`/${item}`}> {item}</NavLink>)
+							: (
+								<NavLink
+									className={({ isActive }) => (
+										isActive
+											? 'active'
+											: (!pageNumber && index === 0) ? 'active' : ''
+									)}
+									key={index}
+									to={endoint ? `/${endoint}/${item}` : `/${item}`}
+								>
+									{item}
+								</NavLink>
+							)
 					))
 				}
 			</div>

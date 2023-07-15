@@ -1,7 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .news-letter {
-	margin: 72px 0;
+	margin: 72px 0 0 0;
 
 	&__inner {
 		background-color: $purple;
@@ -27,8 +27,6 @@
 		font-family: 'DINPro';
 		line-height: 28px;
 	}
-
-	&__subscribe-block {}
 
 	&__subscribe-block-wrapper {
 		display: flex;
@@ -67,7 +65,7 @@
 
 @media screen and (max-width: 320px) {
 	.news-letter {
-		margin: 56px 0;
+		margin: 56px 0 0 0;
 
 		&__inner {
 			padding: 24px;

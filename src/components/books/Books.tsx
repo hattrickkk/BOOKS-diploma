@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '../../store/index'
-import { loadBooks, loadSearch } from '../../store/books/actions'
+import { loadBooks} from '../../store/books/actions'
 import BookItem from '../bookItem/BookItem'
 import { MoonLoader } from 'react-spinners'
 
@@ -12,6 +12,7 @@ import { useParams } from 'react-router-dom'
 import Pagination from '../../components/pagination/Pagination'
 
 const Books = () => {
+
 	const { pageNumber } = useParams()
 	const [curPageNumber, setCurPageNumber] = useState(pageNumber ? +pageNumber : 1)
 
@@ -26,7 +27,6 @@ const Books = () => {
 	useEffect(() => {
 		setCurPageNumber(pageNumber ? +pageNumber : 1)
 	}, [pageNumber])
-
 
 	if (!books2.length) {
 		return (

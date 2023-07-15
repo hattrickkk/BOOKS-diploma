@@ -16,6 +16,8 @@
 		&__heartIcon {
 			align-self: center;
 			cursor: pointer;
+			background-color: $white;
+			padding: 0 0 10px 10px;
 		}
 	}
 
@@ -87,7 +89,8 @@
 			}
 
 			&__info {
-				flex: 0 0 420px;
+				flex: 0 0 400px;
+				max-width: 350px;
 			}
 
 			&__info-text {
@@ -135,6 +138,7 @@
 				flex: 1 1 auto;
 				width: 100%;
 				padding: 0;
+				max-width: none;
 			}
 
 			&__title,

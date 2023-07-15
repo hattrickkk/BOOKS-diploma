@@ -1,0 +1,70 @@
+@use '../../styles/variable.scss' as *;
+
+.autocomplete {
+	position: absolute;
+	overflow: auto;
+	max-height: 300px;
+	height: auto;
+	width: 100%;
+	left: 0;
+	top: calc(100% + 10px);
+	background-color: $white;
+	border: 1px solid $gray;
+
+	&.without-border {
+		border: none;
+	}
+
+	&__item {
+		&--all {
+			padding: 17px;
+			color: $secondary;
+			text-align: center;
+		}
+
+		padding: 15px;
+		border-bottom: 1px solid $gray;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+
+	&__image {
+		padding: 0 15px;
+
+		img {
+			max-width: 60px;
+		}
+
+		&--purple {
+			background-color: $purple;
+		}
+
+		&--green {
+			background-color: $green;
+		}
+
+		&--blue {
+			background-color: $blue;
+		}
+
+		&--orange {
+			background-color: $orange;
+		}
+	}
+
+	&__title {
+		padding: 0 0 0 16px;
+		color: $primary;
+		font-family: 'Helios';
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	a {
+		display: block;
+	}
+
+}

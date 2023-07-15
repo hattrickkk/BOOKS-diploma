@@ -62,3 +62,11 @@ export type FormType = {
 	confirmPassword?: string
 }
 export type FormErrorsType = Partial<Record<keyof FormType, string>>  /* & {g: string} */
+
+
+export type SearchResponseType = {
+	error: string
+	total: string
+	page: string
+	books: BookType[]
+}

@@ -23,6 +23,9 @@
 		display: flex;
 	}
 
+	&__search-block {}
+
+
 	&__buttons {
 		padding: 0 0 0 30px;
 		display: flex;
@@ -40,16 +43,34 @@
 		}
 	}
 
-
-
-
-
 	&__burger-button {
 		display: none;
 	}
 
-
 	&__menu {}
+
+	.search {
+		&__icon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+			display: flex;
+			align-items: center;
+		}
+
+		&__input {
+			width: 100%;
+		}
+
+		position: relative;
+		border: 1px solid $gray;
+		font-size: inherit;
+		font-family: inherit;
+		padding: 12px 45px 11px 14px;
+		flex: 1 0 200px;
+		margin: 0 30px;
+	}
 
 }
 
@@ -59,4 +80,18 @@
 	display: none;
 
 	&.active {}
+}
+
+@media screen and (max-width: 760px) {
+	.header {
+
+		&__buttons {
+			padding: 0 0 0 15px;
+
+			.button {
+				padding: 9px 20px;
+			}
+		}
+
+	}
 }

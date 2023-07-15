@@ -4,6 +4,7 @@ import './header.scss'
 import HeaderIcons from './headerIcons/HeaderIcons'
 import HeaderButtons from './HeaderButtons'
 import HeaderInfo from './HeaderInfo'
+import SearchBlock from '../searchBlock/SearchBlock'
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ const Header = () => {
 			<div className="container">
 				<div className="header__inner">
 					<Logo className='header' />
-					<p>search</p>
+					<SearchBlock className={'header'} />
 					<HeaderInfo cb={burgerBtnClick} />
 
 

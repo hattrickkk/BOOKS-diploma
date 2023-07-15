@@ -17,6 +17,7 @@ import { cartReducer } from "./cart/reducer";
 import { regReducer } from "./registration/reducer";
 import { activationReducer } from "./activation/reducer";
 import { authReducer } from "./auth/reducer";
+import { searchReducer } from "./search/reducer";
 
 
 const rootReducer = combineReducers({
@@ -25,7 +26,8 @@ const rootReducer = combineReducers({
 	cart: cartReducer,
 	registration: regReducer,
 	activation: activationReducer,
-	auth: authReducer
+	auth: authReducer,
+	search: searchReducer
 })
 
 const persistConfig = {

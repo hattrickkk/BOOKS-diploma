@@ -2,7 +2,6 @@ import { BookType } from "models"
 import { getBooks } from "../../services/getBooks"
 import { AppThunk } from "store"
 import { getArrObBooksWithRate } from "../../services/booksRate/getArrObBooksWithRate"
-
 export const booksActionsNames = {
 	SET_BOOKS: 'SET_BOOKS'
 }

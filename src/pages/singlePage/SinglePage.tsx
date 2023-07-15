@@ -20,7 +20,7 @@ const SinglePage = () => {
 			getSingleBook(isbn13 as string)
 				.then(res => setBook(res))
 		}
-	}, [])
+	}, [isbn13])
 
 	return (
 		<div className='single-page'>

@@ -9,6 +9,7 @@ import AuthPage from '../pages/AuthPage/AuthPage'
 import RegConfirmationPage from '../pages/registarationConfirmationPage/RegConfirmationPage'
 import ActivationPage from '../pages/activationPage/ActivationPage'
 import SuccessPage from '../pages/successPage/SuccessPage'
+import SearchPage from '../pages/searchPage/SearchPage'
 
 const BooksRoutes = () => {
 	return (
@@ -16,10 +17,12 @@ const BooksRoutes = () => {
 			<Route path='/' element={<Layout />} >
 				<Route index element={<HomePage />} />
 				<Route path=':pageNumber' element={<HomePage />} />
-				{/* <Route index element={<CartPage />} /> */}
+
 				<Route path='books/:isbn13' element={<SinglePage />} />
 				<Route path='books/favorites' element={<FavBooksPage />} />
 				<Route path='books/cart' element={<CartPage />} />
+				<Route path='books/search' element={<SearchPage />} />
+				<Route path='books/search/:searchPageNumber' element={<SearchPage />} />
 
 				<Route path='auth' element={<AuthPage />} />
 				<Route path='auth/registration-confirmation' element={<RegConfirmationPage />} />
