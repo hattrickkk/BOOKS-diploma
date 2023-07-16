@@ -5,7 +5,7 @@ import { loadSearch } from '../../store/search/actions'
 import './search.scss'
 import Autocomplete from './autocomplete/Autocomplete'
 import SearchInput from './SearchInput'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 type Props = {
 	className: string
@@ -20,6 +20,7 @@ const SearchBlock = ({ className }: Props) => {
 	const [curPage, setCurPage] = useState(searchPageNumber ? +searchPageNumber : 1)
 
 	const dispatch = useDispatch<AppDispatch>()
+	const location = useLocation()
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -31,7 +32,9 @@ const SearchBlock = ({ className }: Props) => {
 	}, [text, curPage])
 
 	useEffect(() => {
-		navigate('/books/search')
+		if (location.pathname.includes('/books/search')) {
+			navigate('/books/search')
+		}
 	}, [])
 
 

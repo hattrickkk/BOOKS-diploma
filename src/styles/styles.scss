@@ -23,6 +23,24 @@ body {
 	line-height: 32px;
 	background-color: $white;
 	color: $primary;
+	transition: 0.3s all ease;
+
+	&.lock {
+		overflow: hidden;
+		transition: 0.3s all ease;
+
+		&::after {
+			content: '';
+			background-color: $primary;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			z-index: 3;
+			transition: 0.3s all ease;
+			opacity: 0.5;
+		}
+	}
 }
 
 .wrapper {

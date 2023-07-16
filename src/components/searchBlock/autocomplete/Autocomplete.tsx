@@ -46,6 +46,7 @@ const Autocomplete = ({ linkClick, isOpen, closeAutocomplete }: Props) => {
 	const autocompleteClassName = (+search.total >= 1)
 		? 'search__autocomplete autocomplete'
 		: 'search__autocomplete autocomplete without-border '
+
 	return (
 		<div ref={autocompleteRef} className={autocompleteClassName}>
 			{search.books.length !== 0 &&

@@ -1,36 +1,27 @@
 import Logo from '../../UI/logo/Logo'
 import React, { useState } from 'react'
 import './header.scss'
-import HeaderIcons from './headerIcons/HeaderIcons'
-import HeaderButtons from './HeaderButtons'
 import HeaderInfo from './HeaderInfo'
 import SearchBlock from '../searchBlock/SearchBlock'
+import { useSelector } from 'react-redux'
+import { AppState } from 'store'
+import HeaderMenu from './HeaderMenu'
 
 const Header = () => {
-	const [isOpen, setIsOpen] = useState(false)
-
-	const burgerBtnClick = () => {
-		setIsOpen(prev => !prev)
-	}
+	const isOpen = useSelector((state: AppState) => state.headerMenu.isOpen)
 
 	return (
 		<div className='header'>
-			<div className="container">
-				<div className="header__inner">
-					<Logo className='header' />
-					<SearchBlock className={'header'} />
-					<HeaderInfo cb={burgerBtnClick} />
-
-
-					<div
-						className={isOpen ? "header__menu menu active" : "header__menu menu"}
-					>
-						<li>d</li>
-						<li>wd</li>
+			<div className='header__wrapper'>
+				<div className="container">
+					<div className="header__inner">
+						<Logo className='header' />
+						<SearchBlock className={'header'} />
+						<HeaderInfo />
 					</div>
 				</div>
-
 			</div>
+			<HeaderMenu />
 		</div>
 	)
 }
