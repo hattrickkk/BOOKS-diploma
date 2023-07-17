@@ -1,0 +1,23 @@
+@use '../../styles/variable.scss' as *;
+
+.account-page {
+	padding: 180px 0;
+
+	.account {
+
+		&__fields {
+			&>* {
+				margin: 0 0 35px 0;
+			}
+
+			.error-label {
+				margin: -30px 0 20px 0;
+			}
+
+			&.disabled .input {
+				pointer-events: none;
+				color: $secondary;
+			}
+		}
+	}
+}

@@ -5,14 +5,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ValidationError } from 'fastest-validator'
 import FastestValidator from "fastest-validator"
 
-import { ErrorMessageType, FormErrorsType } from '../../../../models'
+import { FormErrorsType } from '../../../../models'
 import { useDispatch } from 'react-redux'
 import { AppDispatch, AppState } from '../../../../store'
 import { useSelector } from 'react-redux'
 import Button from '../../../../UI/button/Button'
 import { getSignInValidationObj } from '../../../../helpers/getSignInValidationObj'
 import ErrorLabel from '../../../../UI/errorLabel/ErrorLabel'
-import { authAction } from '../../../../store/auth/actions'
+import { authAction, clearAuthStoreAction } from '../../../../store/auth/actions'
 
 type FormType = {
 	email: string
@@ -29,9 +29,19 @@ const SignIn = () => {
 	const navigate = useNavigate()
 	const errorsFromAuth = useSelector((state: AppState) => state.auth.errors)
 
-	// useEffect(() => {
-	// 	dispatch(clearAuthStoreAction())
-	// }, [])
+	useEffect(() => {
+		dispatch(clearAuthStoreAction())
+	}, [])
+
+
+	useEffect(() => {
+		if (errorsFromAuth) {
+			setFormErrors({
+				...formErrors,
+				password: Object.values(errorsFromAuth).join(' ')
+			})
+		}
+	}, [errorsFromAuth])
 
 
 	const [form, setForm] = useState<FormType>({

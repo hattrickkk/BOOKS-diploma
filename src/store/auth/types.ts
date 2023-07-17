@@ -5,9 +5,15 @@ export type AuthStateType = {
 	isAuth: boolean
 	errors?: ErrorMessageType
 	tokens?: TokensType
+	password?: string
 }
 
 export type AuthActionType = {
 	type: string
-	payload?: TokensType | ErrorMessageType
+	payload?: ErrorMessageType | string | SuccesAuthType
+}
+
+export type SuccesAuthType = {
+	tokens: TokensType,
+	password: string
 }

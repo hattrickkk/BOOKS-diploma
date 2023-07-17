@@ -13,10 +13,11 @@ type PropsType = {
 	textAreaChangedHandler?: (e: ChangeEvent<HTMLTextAreaElement>) => void
 	isTextArea?: boolean
 	className?: string
+	value?: string
 }
 
 
-const TextField = ({ label, placeholder, onChangeHandler, textAreaChangedHandler, name, type, error, isTextArea, className }: PropsType) => {
+const TextField = ({ label, placeholder, onChangeHandler, textAreaChangedHandler, name, type, error, isTextArea, className, value }: PropsType) => {
 
 	let inputClassName = (error ? 'field-input input error' : 'field-input input')
 
@@ -32,11 +33,12 @@ const TextField = ({ label, placeholder, onChangeHandler, textAreaChangedHandler
 				<input
 					type={(!type) ? 'text' : type}
 					name={name}
+					value={value}
 					className={inputClassName}
 					placeholder={placeholder}
 					onChange={onChangeHandler}
 					min={type === 'number' ? 0 : undefined}
-					// pattern='^[0-9]+$'
+				// pattern='^[0-9]+$'
 				/>
 			}
 

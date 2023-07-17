@@ -37,29 +37,33 @@ const HeaderMenu = () => {
 			className={isOpen ? "header__menu menu active" : "header__menu menu"}
 		>
 			<div className="menu__inner">
-				<div className="menu__links">
-					<Link
-						to={'/books/cart'}
-						className='menu__link'
-						onClick={() => dispatch(closeMenu())}
-					>
-						Cart
-					</Link>
-					<Link
-						className='menu__link'
-						to={'/books/favorites'}
-						onClick={() => dispatch(closeMenu())}
-					>
-						Favorites
-					</Link>
-					<Link
-						className='menu__link'
-						to={'/'}
-						onClick={() => dispatch(closeMenu())}
-					>
-						Account
-					</Link>
-				</div>
+				{isAuth &&
+					<div className="menu__links">
+						<Link
+							to={'/books/cart'}
+							className='menu__link'
+							onClick={() => dispatch(closeMenu())}
+						>
+							Cart
+						</Link>
+						<Link
+							className='menu__link'
+							to={'/books/favorites'}
+							onClick={() => dispatch(closeMenu())}
+						>
+							Favorites
+						</Link>
+						<Link
+							className='menu__link'
+							to={'/auth/account'}
+							onClick={() => dispatch(closeMenu())}
+						>
+							Account
+						</Link>
+					</div>
+				}
+
+
 				<div className="menu__buttons">
 					{isAuth && <Button text='Log out' clickHandler={logOutClick} />}
 

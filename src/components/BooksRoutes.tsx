@@ -10,6 +10,7 @@ import RegConfirmationPage from '../pages/registarationConfirmationPage/RegConfi
 import ActivationPage from '../pages/activationPage/ActivationPage'
 import SuccessPage from '../pages/successPage/SuccessPage'
 import SearchPage from '../pages/searchPage/SearchPage'
+import AccountPage from '../pages/accountPage/AccountPage'
 
 const BooksRoutes = () => {
 	return (
@@ -25,6 +26,7 @@ const BooksRoutes = () => {
 				<Route path='books/search/:searchPageNumber' element={<SearchPage />} />
 
 				<Route path='auth' element={<AuthPage />} />
+				<Route path='auth/account' element={<AccountPage />} />
 				<Route path='auth/registration-confirmation' element={<RegConfirmationPage />} />
 				<Route path='auth/activate/:uid/:token' element={<ActivationPage />} />
 				<Route path='auth/success' element={<SuccessPage />} />

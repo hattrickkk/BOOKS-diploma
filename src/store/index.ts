@@ -19,6 +19,7 @@ import { activationReducer } from "./activation/reducer";
 import { authReducer } from "./auth/reducer";
 import { searchReducer } from "./search/reducer";
 import { headerMenuReducer } from "./headerMenu/reducer";
+import { accountReducer } from "./accountInfo/reducer";
 
 
 const rootReducer = combineReducers({
@@ -29,13 +30,14 @@ const rootReducer = combineReducers({
 	activation: activationReducer,
 	auth: authReducer,
 	search: searchReducer,
-	headerMenu: headerMenuReducer
+	headerMenu: headerMenuReducer,
+	account: accountReducer
 })
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['favBooks', 'cart', 'auth'],
+	whitelist: ['favBooks', 'cart', 'auth', 'account'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

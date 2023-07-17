@@ -1,7 +1,7 @@
 
 import { ErrorMessageType, TokensType } from "../../models";
 import { authActionName } from "./actions";
-import { AuthActionType, AuthStateType } from "./types";
+import { AuthActionType, AuthStateType, SuccesAuthType } from "./types";
 
 const initValue: AuthStateType = {
 	isAuth: false
@@ -12,7 +12,8 @@ export const authReducer = (state: AuthStateType = initValue, action: AuthAction
 		case authActionName.AUTH_SUCCESS:
 			return {
 				isAuth: true,
-				tokens: action.payload as TokensType
+				tokens: (action.payload as SuccesAuthType).tokens,
+				password: (action.payload as SuccesAuthType).password,
 			}
 		case authActionName.AUTH_FAILED:
 			return {
@@ -22,6 +23,14 @@ export const authReducer = (state: AuthStateType = initValue, action: AuthAction
 		case authActionName.AUTH_CLEAR:
 			return {
 				isAuth: false,
+			}
+		case authActionName.AUTH_UPDATE:
+			return {
+				...state,
+				tokens: {
+					...state.tokens as TokensType,
+					access: (action.payload as { access: string }).access
+				}
 			}
 		default:
 			return state

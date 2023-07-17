@@ -1,6 +1,9 @@
+
+import { getNewAccessToken } from "../../services/getNewAccessToken"
 import { AppThunk } from ".."
 import { ErrorMessageType, TokensType } from "../../models"
 import { logIn } from "../../services/logIn"
+import { SuccesAuthType } from "./types"
 
 export const authActionName = {
 	AUTH_SUCCESS: 'AUTH_SUCCESS',
@@ -9,10 +12,13 @@ export const authActionName = {
 	AUTH_UPDATE: 'AUTH_UPDATE_ACCESSTOKEN'
 }
 
-const authSucess = (tokens: TokensType) => {
+const authSucess = (tokens: TokensType, password: string) => {
 	return {
 		type: authActionName.AUTH_SUCCESS,
-		payload: tokens
+		payload: {
+			tokens,
+			password
+		} as SuccesAuthType
 	}
 }
 
@@ -28,12 +34,12 @@ export const clearAuthStoreAction = () => {
 	}
 }
 
-// export const updateAccessToken = (accessToken: string) => {
-// 	return {
-// 		type: authActionName.AUTH_UPDATE,
-// 		payload: accessToken
-// 	}
-// }
+export const updateAccessToken = (accessToken: string) => {
+	return {
+		type: authActionName.AUTH_UPDATE,
+		payload: accessToken
+	}
+}
 
 
 export const authAction = (email: string, password: string, cb?: () => void): AppThunk => {
@@ -50,7 +56,14 @@ export const authAction = (email: string, password: string, cb?: () => void): Ap
 			return dispatch(authFailed(response.data as ErrorMessageType))
 		}
 
-		dispatch(authSucess(response.data as TokensType))
+		dispatch(authSucess(response.data as TokensType, password as string))
 		cb && cb()
+	}
+}
+
+export const authUpdateTokenAction = (refreshToken: string): AppThunk => {
+	return async (dispatch) => {
+		const response = await getNewAccessToken(refreshToken)
+		dispatch(updateAccessToken(response))
 	}
 }

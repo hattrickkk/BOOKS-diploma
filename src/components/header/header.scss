@@ -174,6 +174,8 @@
 		}
 
 		&__buttons {
+			margin-top: auto;
+
 			.button {
 				width: 100%;
 				margin: 0 0 15px 0;
@@ -249,6 +251,7 @@
 				&:not(:last-child) {
 					margin: 0 0 25px 0;
 				}
+
 				font-size: 28px;
 			}
 		}
