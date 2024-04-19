@@ -20,10 +20,14 @@ const CartPage = () => {
 			<div className="container">
 				<BackHome />
 				<Title className="cart-page" text='Cart' />
-				<div className="cart">
-					<Cart />
-					<CartCalculator sum={sum.toString()} className='cart' />
-				</div>
+				{
+					(cart.length >= 1) &&
+					<div className="cart">
+						<Cart />
+						<CartCalculator sum={sum.toString()} className='cart' />
+					</div>
+				}
+
 				{
 					(cart.length === 0) && <NotFound />
 				}
