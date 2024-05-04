@@ -1,5 +1,5 @@
 import React from 'react'
-import './notfoundImage.scss'
+import './notFoundImage.scss'
 import notfoundImage from '../../assets/notFound.png'
 
 const NotFound = () => {
